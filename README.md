@@ -71,3 +71,4 @@ umount $UBUNTU_PATH/sdcard
 echo "Done"
 ```
     sh /data/start_ubuntu.sh
+![preview](https://res.cloudinary.com/dftl2bdxp/image/upload/v1770967198/Screenshot_2026-02-13_141755_tjvxxu.png)
