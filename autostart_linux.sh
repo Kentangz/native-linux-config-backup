@@ -1,5 +1,7 @@
 #!/system/bin/sh
 
+sleep 30
+
 UBUNTU_PATH="/data/linux-ubuntu"
 LOG_FILE="/sdcard/CustomLog/Sda32/linux_boot.log"
 
@@ -21,7 +23,6 @@ cleanup_on_fail() {
 }
 
 log_msg "Starting boot process..."
-sleep 20
 
 # Create Ubuntu directory
 if [ ! -d "$UBUNTU_PATH" ]; then
