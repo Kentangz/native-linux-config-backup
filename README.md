@@ -8,10 +8,15 @@
  - [BusyBox](https://github.com/Magisk-Modules-Alt-Repo/BuiltIn-BusyBox/releases)
  - [Termux](https://github.com/termux/termux-app)
  - Disk Partition
- 
-  **Format Partition**
 
-     /system/bin/mke2fs -t ext4 /dev/block/sda32`
+
+**Substitute User**
+
+    su
+
+**Format Partition**
+
+     /system/bin/mke2fs -t ext4 /dev/block/sda32
 
    
 **Permission & Mounting**
@@ -72,3 +77,11 @@ echo "Done"
 ```
     sh /data/start_ubuntu.sh
 ![preview](https://res.cloudinary.com/dftl2bdxp/image/upload/v1770967198/Screenshot_2026-02-13_141755_tjvxxu.png)
+
+---
+
+## Additional Scripts
+
+**autostart_linux.sh** - Automated boot script for running Ubuntu chroot with SSH server on device startup.
+- Place in: `/data/adb/service.d/`
+- Make executable: `chmod +x /data/adb/service.d/autostart_linux.sh.`
