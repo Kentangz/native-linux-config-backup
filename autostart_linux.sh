@@ -12,11 +12,11 @@ log_msg() {
 
 cleanup_on_fail() {
     log_msg "CRITICAL ERROR: Cleaning up mounts..."
-    umount "$UBUNTU_PATH/sdcard" 2>/dev/null
-    umount "$UBUNTU_PATH/dev/pts" 2>/dev/null
-    umount "$UBUNTU_PATH/proc" 2>/dev/null
-    umount "$UBUNTU_PATH/sys" 2>/dev/null
-    umount "$UBUNTU_PATH/dev" 2>/dev/null
+    umount -l "$UBUNTU_PATH/sdcard" 2>/dev/null
+    umount -l "$UBUNTU_PATH/dev/pts" 2>/dev/null
+    umount -l "$UBUNTU_PATH/proc" 2>/dev/null
+    umount -l "$UBUNTU_PATH/sys" 2>/dev/null
+    umount -l "$UBUNTU_PATH/dev" 2>/dev/null
     umount -l "$UBUNTU_PATH" 2>/dev/null
 }
 
