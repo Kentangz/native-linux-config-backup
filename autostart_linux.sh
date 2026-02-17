@@ -1,6 +1,16 @@
 #!/system/bin/sh
 
+
 sleep 30
+
+
+echo "wakelock" > /sys/power/wake_lock
+
+
+setprop service.adb.tcp.port 6969
+stop adbd
+start adbd
+
 
 UBUNTU_PATH="/data/linux-ubuntu"
 LOG_FILE="/sdcard/CustomLog/Sda32/linux_boot.log"
