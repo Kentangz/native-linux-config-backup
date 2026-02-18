@@ -13,6 +13,7 @@ start adbd
 
 
 UBUNTU_PATH="/data/linux-ubuntu"
+UBUNTU_PARTITION="/dev/block/sda32"
 LOG_FILE="/sdcard/CustomLog/Sda32/linux_boot.log"
 
 # Ensure log directory exists
@@ -44,7 +45,7 @@ fi
 # Mount main partition
 if ! grep -qs "$UBUNTU_PATH " /proc/mounts; then
     log_msg "Mounting partition sda32..."
-    mount -t ext4 -o rw,noatime /dev/block/sda32 "$UBUNTU_PATH"
+    mount -t ext4 -o rw,noatime "$UBUNTU_PARTITION" "$UBUNTU_PATH"
     
     if [ $? -ne 0 ]; then
         log_msg "ERROR: Cannot mount partition sda32"
