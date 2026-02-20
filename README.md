@@ -84,4 +84,4 @@ echo "Done"
 
 **autostart_linux.sh** - Automated boot script for running Ubuntu chroot with SSH server on device startup.
 - Place in: `/data/adb/service.d/`
-- Make executable: `chmod +x /data/adb/service.d/autostart_linux.sh.`
+- Make executable: `chmod +x /data/adb/service.d/autostart_linux.sh`
