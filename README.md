@@ -83,5 +83,15 @@ echo "Done"
 ## Additional Scripts
 
 **autostart_linux.sh** - Automated boot script for running Ubuntu chroot with SSH server on device startup.
-- Place in: `/data/adb/service.d/`
-- Make executable: `chmod +x /data/adb/service.d/autostart_linux.sh`
+- Place in:
+  ```bash
+  /data/adb/service.d/
+  ```
+- Make executable:
+  ```bash
+  chmod +x /data/adb/service.d/autostart_linux.sh
+  ```
+- scrcpy:
+  ```bash
+  scrcpy --max-size 1024 --video-bit-rate 4M --max-fps 30 --turn-screen-off
+  ```
