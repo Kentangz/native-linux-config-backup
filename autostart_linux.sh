@@ -14,14 +14,18 @@ start adbd
 
 UBUNTU_PATH="/data/linux-ubuntu"
 UBUNTU_PARTITION="/dev/block/sda32"
-LOG_FILE="/sdcard/CustomLog/Sda32/linux_boot.log"
+TIMESTAMP=$(date '+%d-%m-%Y_%H-%M-%S')
+LOG_DIR="/sdcard/CustomLog/Sda32"
+LOG_FILE="$LOG_DIR/ubuntu_$TIMESTAMP.log"
 
 # Ensure log directory exists
-mkdir -p "$(dirname "$LOG_FILE")" 2>/dev/null
+mkdir -p "$LOG_DIR"
 
 log_msg() {
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
+    echo "$(date '+%H:%M:%S') - $1" >> "$LOG_FILE"
 }
+
+find "$LOG_DIR" -name "ubuntu_*.log" -type f -mtime +2 -delete
 
 cleanup_on_fail() {
     log_msg "CRITICAL ERROR: Cleaning up mounts..."
